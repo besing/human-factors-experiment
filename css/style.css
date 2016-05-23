@@ -1,0 +1,9 @@
+.color-box {
+  width: 200px;
+  height: 150px; }
+  .color-box#color-1-a {
+    background: blue; }
+  .color-box#color-1-b {
+    background: red; }
+
+/*# sourceMappingURL=style.css.map */

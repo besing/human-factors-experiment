@@ -1,0 +1,12 @@
+.color-box {
+  width: 200px;
+  height: 150px;
+
+  &#color-1-a {
+    background: blue;
+  }
+
+  &#color-1-b {
+    background: red;
+  }
+}
