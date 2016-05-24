@@ -31,38 +31,36 @@ playSinoid();
 
 
 // Count keypress via keypress.js
-var listen = new window.keypress.Listener();
+var listener = new window.keypress.Listener();
 
-var keyCountUp;
-var keyCountDown;
+var countTotalUp = [];
+var countTotalDown = [];
 
 var countKeyPress = function(keyString) {
-  listen.counting_combo(keyString, function (e, count) {
-    console.log(count + 'x ' + keyString);
+  listener.counting_combo(keyString, function () {
+
     if (keyString === 'up') { // TODO
-      keyCountUp = count;
+      countTotalUp.push(keyString);
     }
     else if (keyString === 'down') {
-      keyCountDown = count;
+      countTotalDown.push(keyString);
     }
-    // return count + 'x up';
-    // jsPsych.data.addDataToLastTrial({key_count_up: count})
+
+    console.log('UP: ' + countTotalUp.length);
+    console.log('DOWN: ' + countTotalDown.length);
+
   });
 };
 
+countKeyPress('up');
+countKeyPress('down');
 
 
-var soundBlock = {
+  var soundBlock = {
   type: 'single-audio',
   timing_response: 1000,
   response_ends_trial: false,
   randomize_order: true,
-
-  on_finish: function () {
-    // var keys = 'ABC';
-    jsPsych.data.addDataToLastTrial({key_count_up: keyCountUp});
-    jsPsych.data.addDataToLastTrial({key_count_down: keyCountDown})
-  },
 
   timeline: [
     {
@@ -86,41 +84,20 @@ timeline.push(soundBlock);
 jsPsych.init({
   timeline: timeline,
   on_trial_start: function () {
-    countKeyPress('up');
-    countKeyPress('down');
+    countTotalUp = []; // empty arrays for next trial
+    countTotalDown = [];
   },
+
+  on_trial_finish: function () {
+    jsPsych.data.addDataToLastTrial({key_count_UP: countTotalUp.length});
+    jsPsych.data.addDataToLastTrial({key_count_DOWN: countTotalDown.length})
+  },
+
   on_finish: function() {
     jsPsych.data.displayData()
   }
 });
 
 
-
-
-/*
-var soundBlock = {
-  type: 'multi-stim-multi-response',
-  stimuli: [
-    'playSinoid()',
-  ],
-  is_html: true,
-  choices: [[89, 78]],
-  timing_stim: [1000],
-  // prompt: 'Wie fuehlst du dich?'
-};
-
-
-var imgBlock = {
-  type: 'multi-stim-multi-response',
-  stimuli: [
-    '<div class="color-box" id="color-1-a">color1a</div>',
-    '<div class="color-box" id="color-1-b">color1b</div>',
-  ],
-  is_html: true,
-  choices: [[89, 78]],
-  timing_stim: [1000],
-  prompt: 'Wie fuehlst du dich?'
-};
-*/
 
 });
