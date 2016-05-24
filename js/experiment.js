@@ -1,36 +1,23 @@
 $(document).ready(function () { // braucht keypress.js anscheinend
 
 
-/*
-var playSinoid = function playSinoid() {
+// Create WebAudio Context + Play Function
+var audioContext = new (window.AudioContext || window.webkitAudioContext)();
+var oscillator;
 
-  // create web audio api context
-  var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-  // create Oscillator node
-  var oscillator = audioCtx.createOscillator();
-
+var playSinoid = function playSinoid(freq, duration) { // (Hz, sec)
+  oscillator = audioContext.createOscillator();
   oscillator.type = 'sine';
-  oscillator.frequency.value = 100; // value in hertz
-  oscillator.connect(audioCtx.destination);
-  oscillator.start();
-
-  $('.sound1.sound-start').on('click', function() {
-    oscillator.start();
-  });
-
-  $('.sound1.sound-stop').on('click', function() {
-    oscillator.stop();
-  });
-
+  oscillator.frequency.value = freq;
+  oscillator.connect(audioContext.destination);
+  var currentTime = audioContext.currentTime;
+  oscillator.start(currentTime);
+  oscillator.stop(currentTime + duration); // after certain duration
 };
 
-playSinoid();
-*/
 
 
-
-// Count keypress via keypress.js
+// Count Keypresses via keypress.js
 var listener = new window.keypress.Listener();
 
 var countTotalUp = [];
@@ -56,24 +43,28 @@ countKeyPress('up');
 countKeyPress('down');
 
 
-  var soundBlock = {
-  type: 'single-audio',
-  timing_response: 1000,
+var soundBlock = {
+  type: 'single-stim',
+  timing_response: 1500,
   response_ends_trial: false,
   randomize_order: true,
+  is_html: true,
 
   timeline: [
     {
-      stimulus: './audio/440Hz-5sec.mp3',
+      stimulus: function () {
+        playSinoid(80, 1);
+      },
       prompt: '<div class="color-box" id="color-1-a">color1a</div>'
     },
     {
-      stimulus: './audio/1000Hz-5sec.mp3',
+      stimulus: function () {
+        playSinoid(120, 1);
+      },
       prompt: '<div class="color-box" id="color-1-b">color1b</div>'
     }
   ]
 };
-
 
 
 
@@ -89,6 +80,7 @@ jsPsych.init({
   },
 
   on_trial_finish: function () {
+    oscillator = ''; // reset for next trial (needs always new Object - http://wp.me/pvLeJ-5y)
     jsPsych.data.addDataToLastTrial({key_count_UP: countTotalUp.length});
     jsPsych.data.addDataToLastTrial({key_count_DOWN: countTotalDown.length})
   },
