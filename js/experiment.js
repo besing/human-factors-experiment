@@ -1,72 +1,69 @@
 $(document).ready(function () { // braucht keypress.js anscheinend
 
 
-  var playSinoid = function playSinoid() {
+/*
+var playSinoid = function playSinoid() {
 
-    // create web audio api context
-    var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  // create web audio api context
+  var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-    // create Oscillator node
-    var oscillator = audioCtx.createOscillator();
+  // create Oscillator node
+  var oscillator = audioCtx.createOscillator();
 
-    oscillator.type = 'sine';
-    oscillator.frequency.value = 100; // value in hertz
-    oscillator.connect(audioCtx.destination);
+  oscillator.type = 'sine';
+  oscillator.frequency.value = 100; // value in hertz
+  oscillator.connect(audioCtx.destination);
+  oscillator.start();
+
+  $('.sound1.sound-start').on('click', function() {
     oscillator.start();
+  });
 
-    $('.sound1.sound-start').on('click', function() {
-      oscillator.start();
-    });
+  $('.sound1.sound-stop').on('click', function() {
+    oscillator.stop();
+  });
 
-    $('.sound1.sound-stop').on('click', function() {
-      oscillator.stop();
-    });
+};
 
-  };
-
-// playSinoid();
+playSinoid();
+*/
 
 
 
 // Count keypress via keypress.js
 var listen = new window.keypress.Listener();
 
-listen.counting_combo('up', function (e, count) {
-  console.log('Pfeil hoch ' + count + 'x gedrueckt');
-});
-listen.counting_combo('down', function (e, count) {
-  console.log('Pfeil runter ' + count + 'x gedrueckt');
-});
+var keyCountUp;
+var keyCountDown;
 
-
-
-
-// Count keypress
-/*
-var count;
-var keypress_count = function() {
-  $('body').keyup(function () {
-    // count++;
-    // console.log(count);
-    count = keypress_count.key_press;
-    jsPsych.data.addDataToLastTrial({key_count: count});
-  })
+var countKeyPress = function(keyString) {
+  listen.counting_combo(keyString, function (e, count) {
+    console.log(count + 'x ' + keyString);
+    if (keyString === 'up') { // TODO
+      keyCountUp = count;
+    }
+    else if (keyString === 'down') {
+      keyCountDown = count;
+    }
+    // return count + 'x up';
+    // jsPsych.data.addDataToLastTrial({key_count_up: count})
+  });
 };
-*/
+
 
 
 var soundBlock = {
   type: 'single-audio',
-  timing_response: 2000,
+  timing_response: 1000,
   response_ends_trial: false,
   randomize_order: true,
 
-  // on_finish: keypress_count(),
+  on_finish: function () {
+    // var keys = 'ABC';
+    jsPsych.data.addDataToLastTrial({key_count_up: keyCountUp});
+    jsPsych.data.addDataToLastTrial({key_count_down: keyCountDown})
+  },
 
-  // on_finish: function (keypress_count) {
-  //   var count = keypress_count.key_press;
-  //   jsPsych.data.addDataToLastTrial({key_count: count})
-  // },
   timeline: [
     {
       stimulus: './audio/440Hz-5sec.mp3',
@@ -88,6 +85,10 @@ timeline.push(soundBlock);
 
 jsPsych.init({
   timeline: timeline,
+  on_trial_start: function () {
+    countKeyPress('up');
+    countKeyPress('down');
+  },
   on_finish: function() {
     jsPsych.data.displayData()
   }
