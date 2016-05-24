@@ -1,12 +1,63 @@
+$color-0-a: #fff;
+$color-0-b: #000;
+
+$color-1-a: rgb(255,0,0);
+$color-1-b: rgb(155,0,0);
+$color-1-c: rgb(80,0,0);
+
+$color-2-a: rgb(0,255,0);
+$color-2-b: rgb(0,155,0);
+$color-2-c: rgb(0,80,0);
+
+$color-3-a: rgb(0,0,255);
+$color-3-b: rgb(0,0,155);
+$color-3-c: rgb(0,0,80);
+
 .color-box {
   width: 200px;
   height: 150px;
 
+  &#color-0-a {
+    background: $color-0-a;
+  }
+
+  &#color-0-b {
+    background: $color-0-b;
+  }
+
   &#color-1-a {
-    background: blue;
+    background: $color-1-a;
   }
 
   &#color-1-b {
-    background: red;
+    background: $color-1-b;
+  }
+
+  &#color-1-c {
+    background: $color-1-c;
+  }
+
+  &#color-2-a {
+    background: $color-2-a;
+  }
+
+  &#color-2-b {
+    background: $color-2-b;
+  }
+
+  &#color-2-c {
+    background: $color-2-c;
+  }
+
+  &#color-3-a {
+    background: $color-3-a;
+  }
+
+  &#color-3-b {
+    background: $color-3-b;
+  }
+
+  &#color-3-c {
+    background: $color-3-c;
   }
 }
