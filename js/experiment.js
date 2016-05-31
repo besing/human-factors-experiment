@@ -87,7 +87,7 @@ for (var i = 0; i < 3; i++) { // TODO : i < 33
     is_html: true,
     stimulus: shuffleAudio[i][1],
     // prompt: [colorsHtml]
-  }
+  };
 
   timeline.push(combinedStimuli);
 
