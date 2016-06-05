@@ -1,27 +1,17 @@
 .color-box {
   width: 200px;
   height: 150px; }
-  .color-box#color-0-a {
-    background: #fff; }
-  .color-box#color-0-b {
-    background: #000; }
   .color-box#color-1-a {
     background: red; }
   .color-box#color-1-b {
     background: #9b0000; }
-  .color-box#color-1-c {
-    background: #500000; }
   .color-box#color-2-a {
     background: lime; }
   .color-box#color-2-b {
     background: #009b00; }
-  .color-box#color-2-c {
-    background: #005000; }
   .color-box#color-3-a {
     background: blue; }
   .color-box#color-3-b {
     background: #00009b; }
-  .color-box#color-3-c {
-    background: #000050; }
 
 /*# sourceMappingURL=style.css.map */

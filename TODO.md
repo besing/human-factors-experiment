@@ -1,15 +1,19 @@
 ## TODO
 
-- Triangle Wave instead of Sine (type: 'triangle')
 
-- Persistent Data (DB) or at least better JSON Output
+[] Triangle Wave instead of Sine (type: 'triangle')
 
-- Random Color <--> Sound combination
+[] Persistent Data (DB) or at least better JSON Output
 
-- Visual Feedback on Keypress
+[] Random Color <--> Sound combination
 
-- Live Hosting
+[] Visual Feedback on Keypress
 
-( - Experiment Progress Bar )
+[] Live Hosting
 
-( - Fullscreen )
+( [] Experiment Progress Bar )
+
+( [] Fullscreen )
+
+---
+
