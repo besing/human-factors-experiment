@@ -23,24 +23,17 @@ var colorsHtml = [
 ];
 
 
-var sinoids = [
-  [0, 'playSinoid(0, 1)'],
-  [150, 'playSinoid(150, 1)'],
-  [200, 'playSinoid(200, 1)']
+var sinoids = [ // don't reorder!
+  // [0, 'playSinoid(0, 1)'],
+  // [150, 'playSinoid(150, 1)'],
+  // [200, 'playSinoid(200, 1)']
+  'playSinoid(0, 1)',
+  'playSinoid(150, 1)',
+  'playSinoid(200, 1)'
 ];
 
-var sinoidsSound = [];
-sinoidsSound.push(
-  sinoids[1],
-  sinoids[1],
-  sinoids[1],
-  sinoids[2],
-  sinoids[2],
-  sinoids[2]
-);
-
-var sinoidsSilence = [];
-sinoidsSilence.push(
+var noSounds = [];
+noSounds.push(
   sinoids[0],
   sinoids[0],
   sinoids[0],
@@ -49,5 +42,19 @@ sinoidsSilence.push(
   sinoids[0]
 );
 
-// console.log('sinoidsSound: ' + sinoidsSound);
-// console.log('sinoidsSilence: ' + sinoidsSilence);
+var sounds = [];
+sounds.push(
+  sinoids[1],
+  sinoids[1],
+  sinoids[1],
+  sinoids[2],
+  sinoids[2],
+  sinoids[2]
+);
+
+
+console.log('sounds: ' + sounds);
+console.log('noSounds: ' + noSounds);
+
+var soundsShuffled = jsPsych.randomization. shuffle(sounds);
+console.log('soundsShuffled: ' + soundsShuffled);
