@@ -1,11 +1,8 @@
 ## TODO
 
 
-[] Requets Data in the beginning: sex / age (+ start button/key)
 
-[] Set values for Frequencies, colors, duration
-
-( [] Experiment Progress Bar )
+[] Set values for Frequencies, duration
 
 ---
 
@@ -14,3 +11,4 @@
 [√] Persistent Data (DB) or at least better JSON Output --> local save is ok
 [√] Fullscreen
 [√] Visual Feedback on Keypress
+[√] Requets Data in the beginning: sex / age (+ start button/key)

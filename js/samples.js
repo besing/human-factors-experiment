@@ -14,12 +14,12 @@ var playSinoid = function (freq, duration) { // (Hz, sec)
 
 
 var colorsHtml = [
-  '<div class="color-box" id="grey"></div>',
-  '<div class="color-box" id="white"></div>',
-  '<div class="color-box" id="amber"></div>',
-  '<div class="color-box" id="malachite"></div>',
-  '<div class="color-box" id="navy-blue"></div>',
-  '<div class="color-box" id="hot-magenta"></div>'
+  '<div class="color-box" id="grey"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
+  '<div class="color-box" id="white"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
+  '<div class="color-box" id="amber"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
+  '<div class="color-box" id="malachite"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
+  '<div class="color-box" id="navy-blue"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
+  '<div class="color-box" id="hot-magenta"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>'
 ];
 
 

@@ -145,7 +145,8 @@ $(document).ready(function () { // braucht keypress.js anscheinend
 
   var timeline = [];
 
-  var combinedStimuli = {
+
+  var colorsSoundStimuli = {
     type: 'single-stim',
     // timing_response: 1500,
     timing_response: -1, // TODO
@@ -154,7 +155,38 @@ $(document).ready(function () { // braucht keypress.js anscheinend
     timeline: allSoundsAndColorsShuffled
   };
 
-  timeline.push(combinedStimuli);
+
+  var inputSex = {
+    type: 'survey-multi-choice',
+    // horizontal: true,
+    required: [true],
+    questions: ['Bitte w&auml;hlen Sie zuerst Ihr Geschlecht aus'],
+    options: [[
+        ['M&auml;nnlich'],
+        ['Weiblich']
+      ]],
+    preamble: ['Herzlich Willkommen zum Experiment!']
+  };
+
+
+  var inputAge = {
+    type: 'survey-text',
+    questions: ['Bitte geben Sie Ihr Alter an:'],
+
+  };
+
+
+  var startScreen = {
+    type: 'instructions',
+    pages: ['<p>Das Experiment kann beginnen. Wenn Sie soweit sind, dr&uuml;cken Sie auf der Tastatur "Y".</p><p>Das Experiment geht sofort danach los.</p>'],
+    key_forward: 'y'
+  };
+
+
+  timeline.push(inputSex);
+  timeline.push(inputAge);
+  timeline.push(startScreen);
+  timeline.push(colorsSoundStimuli);
 
 
   jsPsych.init({
