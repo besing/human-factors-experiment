@@ -1,11 +1,9 @@
 ## TODO
 
 
-[] Triangle Wave instead of Sine (type: 'triangle')
+( [] Triangle Wave instead of Sine (type: 'triangle') --> on/off bad effects )
 
 [] Persistent Data (DB) or at least better JSON Output
-
-[] Random Color <--> Sound combination
 
 [] Visual Feedback on Keypress
 
@@ -17,3 +15,4 @@
 
 ---
 
+[√] Random Color <--> Sound combination

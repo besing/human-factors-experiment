@@ -1,5 +1,6 @@
 $(document).ready(function () { // braucht keypress.js anscheinend
 
+
 // Count Keypresses via keypress.js
   var listener = new window.keypress.Listener();
 
@@ -26,37 +27,43 @@ $(document).ready(function () { // braucht keypress.js anscheinend
   countKeyPress('down');
 
 
+  var soundsDuration = 1; // TODO : pass sound sample duration (in s) here
 
-  var shuffleAudio = jsPsych.randomization.shuffle(sinoids);
-  console.log(shuffleAudio);
-  var shuffleColors = jsPsych.randomization.shuffle(colorsHtml);
-  console.log(shuffleColors);
-
-
-
-  var soundsAndColors = [
+  var soundsAndColors = [ // 6 samples with colors + sounds
     {
-      stimulus: soundsShuffled[0],
+      stimulus: function() {
+        playSinoid(soundsShuffled[0], soundsDuration);
+      },
       prompt: colorsShuffled[0]
     },
     {
-      stimulus: soundsShuffled[1],
+      stimulus: function() {
+        playSinoid(soundsShuffled[1], soundsDuration);
+      },
       prompt: colorsShuffled[1]
     },
     {
-      stimulus: soundsShuffled[2],
+      stimulus: function() {
+        playSinoid(soundsShuffled[2], soundsDuration);
+      },
       prompt: colorsShuffled[2]
     },
     {
-      stimulus: soundsShuffled[3],
+      stimulus: function() {
+        playSinoid(soundsShuffled[3], soundsDuration);
+      },
       prompt: colorsShuffled[3]
     },
     {
-      stimulus: soundsShuffled[4],
+      stimulus: function() {
+        playSinoid(soundsShuffled[4], soundsDuration);
+      },
       prompt: colorsShuffled[4]
     },
     {
-      stimulus: soundsShuffled[5],
+      stimulus: function() {
+        playSinoid(soundsShuffled[5], soundsDuration);
+      },
       prompt: colorsShuffled[5]
     }
   ];
@@ -64,70 +71,65 @@ $(document).ready(function () { // braucht keypress.js anscheinend
   // console.log(soundsAndColors);
 
 
-  var noSoundsAndColors = [
+  var noSoundsAndColors = [ // 6 samples with colors + silence
     {
-      stimulus: noSounds[0],
+      stimulus: function() {
+        playSinoid(noSounds[0], soundsDuration);
+      },
       prompt: colorsHtml[0]
     },
     {
-      stimulus: noSounds[1],
+      stimulus: function() {
+        playSinoid(noSounds[0], soundsDuration);
+      },
       prompt: colorsHtml[1]
     },
     {
-      stimulus: noSounds[2],
+      stimulus: function() {
+        playSinoid(noSounds[0], soundsDuration);
+      },
       prompt: colorsHtml[2]
     },
     {
-      stimulus: noSounds[3],
+      stimulus: function() {
+        playSinoid(noSounds[0], soundsDuration);
+      },
       prompt: colorsHtml[3]
     },
     {
-      stimulus: noSounds[4],
+      stimulus: function() {
+        playSinoid(noSounds[0], soundsDuration);
+      },
       prompt: colorsHtml[4]
     },
     {
-      stimulus: noSounds[5],
+      stimulus: function() {
+        playSinoid(noSounds[0], soundsDuration);
+      },
       prompt: colorsHtml[5]
     }
   ];
 
 
   var allSoundsAndColors = soundsAndColors.concat(noSoundsAndColors); // connect the two arrays
+  console.log('allSoundsAndColors: ', allSoundsAndColors);
 
 
   var allSoundsAndColorsShuffled = jsPsych.randomization.shuffle(allSoundsAndColors); // final trials array
-  console.log(allSoundsAndColorsShuffled);
+  console.log('Shuffled combinations: ', allSoundsAndColorsShuffled);
 
 
   var timeline = [];
 
-    var combinedStimuli = {
-      type: 'single-stim',
-      timing_response: 1500,
-      response_ends_trial: false,
-      // randomize_order: true,
-      is_html: true,
-      stimulus: shuffleAudio[i][1],
-      // prompt: [colorsHtml]
-    };
+  var combinedStimuli = {
+    type: 'single-stim',
+    timing_response: 1500,
+    response_ends_trial: false,
+    is_html: true,
+    timeline: allSoundsAndColorsShuffled
+  };
 
-    timeline.push(combinedStimuli);
-
-    /*timeline: [
-     {
-     stimulus: function () {
-     playSinoid(80, 1);
-     },
-     prompt: '<div class="color-box" id="color-1-a">color1a</div>'
-     },
-     {
-     stimulus: function () {
-     playSinoid(120, 1);
-     },
-     prompt: '<div class="color-box" id="color-1-b">color1b</div>'
-     }
-     ]*/
-  ;
+  timeline.push(combinedStimuli);
 
 
   jsPsych.init({
