@@ -146,7 +146,8 @@ $(document).ready(function () { // braucht keypress.js anscheinend
     },
 
     on_finish: function () {
-      jsPsych.data.displayData()
+      jsPsych.data.displayData('json');
+      jsPsych.data.localSave('experiment_results.csv', 'csv');
     }
   });
 

@@ -25,7 +25,7 @@ var colorsHtml = [
 
 var sinoids = [ // don't reorder!
   0, // function gets called in experiment-timeline, only passing frequency arguments here
-  150,
+  150, // TODO: edit frequencies
   200
 ];
 
