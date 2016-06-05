@@ -3,7 +3,6 @@ $(document).ready(function () { // braucht keypress.js anscheinend
 // Count Keypresses via keypress.js
   var listener = new window.keypress.Listener();
 
-
   var countTotalUp = [];
   var countTotalDown = [];
 
@@ -25,6 +24,7 @@ $(document).ready(function () { // braucht keypress.js anscheinend
 
   countKeyPress('up');
   countKeyPress('down');
+
 
 
   var shuffleAudio = jsPsych.randomization.shuffle(sinoids);
