@@ -1,11 +1,11 @@
-$color-1-a: rgb(255, 0, 0);
-$color-1-b: rgb(155, 0, 0);
+$grey: #c0c0c0;
+$white: #fff;
 
-$color-2-a: rgb(0, 255, 0);
-$color-2-b: rgb(0, 155, 0);
+$amber: #ffc000;
+$malachite: #00ff40;
 
-$color-3-a: rgb(0, 0, 255);
-$color-3-b: rgb(0, 0, 155);
+$navy-blue: #0040ff;
+$hot-magenta: #ff00c0;
 
 body {
   &.jspsych-display-element {
@@ -16,28 +16,28 @@ body {
       width: 100vw;
       height: 100vh;
 
-      &#color-1-a {
-        background: $color-1-a;
+      &#grey {
+        background: $grey;
       }
 
-      &#color-1-b {
-        background: $color-1-b;
+      &#white {
+        background: $white;
       }
 
-      &#color-2-a {
-        background: $color-2-a;
+      &#amber {
+        background: $amber;
       }
 
-      &#color-2-b {
-        background: $color-2-b;
+      &#malachite {
+        background: $malachite;
       }
 
-      &#color-3-a {
-        background: $color-3-a;
+      &#navy-blue {
+        background: $navy-blue;
       }
 
-      &#color-3-b {
-        background: $color-3-b;
+      &#hot-magenta {
+        background: $hot-magenta;
       }
     }
   }

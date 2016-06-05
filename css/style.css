@@ -4,17 +4,17 @@ body.jspsych-display-element {
   body.jspsych-display-element .color-box {
     width: 100vw;
     height: 100vh; }
-    body.jspsych-display-element .color-box#color-1-a {
-      background: red; }
-    body.jspsych-display-element .color-box#color-1-b {
-      background: #9b0000; }
-    body.jspsych-display-element .color-box#color-2-a {
-      background: lime; }
-    body.jspsych-display-element .color-box#color-2-b {
-      background: #009b00; }
-    body.jspsych-display-element .color-box#color-3-a {
-      background: blue; }
-    body.jspsych-display-element .color-box#color-3-b {
-      background: #00009b; }
+    body.jspsych-display-element .color-box#grey {
+      background: #c0c0c0; }
+    body.jspsych-display-element .color-box#white {
+      background: #fff; }
+    body.jspsych-display-element .color-box#amber {
+      background: #ffc000; }
+    body.jspsych-display-element .color-box#malachite {
+      background: #00ff40; }
+    body.jspsych-display-element .color-box#navy-blue {
+      background: #0040ff; }
+    body.jspsych-display-element .color-box#hot-magenta {
+      background: #ff00c0; }
 
 /*# sourceMappingURL=style.css.map */
