@@ -33,12 +33,74 @@ $(document).ready(function () { // braucht keypress.js anscheinend
   console.log(shuffleColors);
 
 
-// TODO : for-Schleife noch mal überarbeiten .. evtl. statt i < 33 (geht das mit untersch. großen Arrays? Vielleicht gibts ne bessere Random-Funktion, die genaue Anzahl von Array-Items erstellt (mit Duplikaten dann eben)
+
+  var soundsAndColors = [
+    {
+      stimulus: soundsShuffled[0],
+      prompt: colorsShuffled[0]
+    },
+    {
+      stimulus: soundsShuffled[1],
+      prompt: colorsShuffled[1]
+    },
+    {
+      stimulus: soundsShuffled[2],
+      prompt: colorsShuffled[2]
+    },
+    {
+      stimulus: soundsShuffled[3],
+      prompt: colorsShuffled[3]
+    },
+    {
+      stimulus: soundsShuffled[4],
+      prompt: colorsShuffled[4]
+    },
+    {
+      stimulus: soundsShuffled[5],
+      prompt: colorsShuffled[5]
+    }
+  ];
+
+  // console.log(soundsAndColors);
+
+
+  var noSoundsAndColors = [
+    {
+      stimulus: noSounds[0],
+      prompt: colorsHtml[0]
+    },
+    {
+      stimulus: noSounds[1],
+      prompt: colorsHtml[1]
+    },
+    {
+      stimulus: noSounds[2],
+      prompt: colorsHtml[2]
+    },
+    {
+      stimulus: noSounds[3],
+      prompt: colorsHtml[3]
+    },
+    {
+      stimulus: noSounds[4],
+      prompt: colorsHtml[4]
+    },
+    {
+      stimulus: noSounds[5],
+      prompt: colorsHtml[5]
+    }
+  ];
+
+
+  var allSoundsAndColors = soundsAndColors.concat(noSoundsAndColors); // connect the two arrays
+
+
+  var allSoundsAndColorsShuffled = jsPsych.randomization.shuffle(allSoundsAndColors); // final trials array
+  console.log(allSoundsAndColorsShuffled);
 
 
   var timeline = [];
 
-  for (var i = 0; i < 3; i++) { // TODO : i < 33
     var combinedStimuli = {
       type: 'single-stim',
       timing_response: 1500,
@@ -65,7 +127,6 @@ $(document).ready(function () { // braucht keypress.js anscheinend
      prompt: '<div class="color-box" id="color-1-b">color1b</div>'
      }
      ]*/
-  }
   ;
 
 
