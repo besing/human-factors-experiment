@@ -1,17 +1,20 @@
-.color-box {
-  width: 200px;
-  height: 150px; }
-  .color-box#color-1-a {
-    background: red; }
-  .color-box#color-1-b {
-    background: #9b0000; }
-  .color-box#color-2-a {
-    background: lime; }
-  .color-box#color-2-b {
-    background: #009b00; }
-  .color-box#color-3-a {
-    background: blue; }
-  .color-box#color-3-b {
-    background: #00009b; }
+body.jspsych-display-element {
+  width: 100%;
+  margin: 0; }
+  body.jspsych-display-element .color-box {
+    width: 100vw;
+    height: 100vh; }
+    body.jspsych-display-element .color-box#color-1-a {
+      background: red; }
+    body.jspsych-display-element .color-box#color-1-b {
+      background: #9b0000; }
+    body.jspsych-display-element .color-box#color-2-a {
+      background: lime; }
+    body.jspsych-display-element .color-box#color-2-b {
+      background: #009b00; }
+    body.jspsych-display-element .color-box#color-3-a {
+      background: blue; }
+    body.jspsych-display-element .color-box#color-3-b {
+      background: #00009b; }
 
 /*# sourceMappingURL=style.css.map */

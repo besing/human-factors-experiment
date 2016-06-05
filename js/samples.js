@@ -14,7 +14,7 @@ var playSinoid = function (freq, duration) { // (Hz, sec)
 
 
 var colorsHtml = [
-  '<div class="color-box" id="color-1-a">color1a</div>',
+  '<div class="color-box" id="color-1-a">color1a</div>', // TODO : delete description before test
   '<div class="color-box" id="color-1-b">color1b</div>',
   '<div class="color-box" id="color-2-a">color2a</div>',
   '<div class="color-box" id="color-2-b">color2b</div>',

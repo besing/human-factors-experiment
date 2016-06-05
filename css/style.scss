@@ -1,37 +1,44 @@
-$color-1-a: rgb(255,0,0);
-$color-1-b: rgb(155,0,0);
+$color-1-a: rgb(255, 0, 0);
+$color-1-b: rgb(155, 0, 0);
 
-$color-2-a: rgb(0,255,0);
-$color-2-b: rgb(0,155,0);
+$color-2-a: rgb(0, 255, 0);
+$color-2-b: rgb(0, 155, 0);
 
-$color-3-a: rgb(0,0,255);
-$color-3-b: rgb(0,0,155);
+$color-3-a: rgb(0, 0, 255);
+$color-3-b: rgb(0, 0, 155);
 
-.color-box {
-  width: 200px;
-  height: 150px;
+body {
+  &.jspsych-display-element {
+    width: 100%;
+    margin: 0;
 
-  &#color-1-a {
-    background: $color-1-a;
-  }
+    .color-box {
+      width: 100vw;
+      height: 100vh;
 
-  &#color-1-b {
-    background: $color-1-b;
-  }
+      &#color-1-a {
+        background: $color-1-a;
+      }
 
-  &#color-2-a {
-    background: $color-2-a;
-  }
+      &#color-1-b {
+        background: $color-1-b;
+      }
 
-  &#color-2-b {
-    background: $color-2-b;
-  }
+      &#color-2-a {
+        background: $color-2-a;
+      }
 
-  &#color-3-a {
-    background: $color-3-a;
-  }
+      &#color-2-b {
+        background: $color-2-b;
+      }
 
-  &#color-3-b {
-    background: $color-3-b;
+      &#color-3-a {
+        background: $color-3-a;
+      }
+
+      &#color-3-b {
+        background: $color-3-b;
+      }
+    }
   }
 }
