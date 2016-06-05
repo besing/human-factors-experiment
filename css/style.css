@@ -2,6 +2,9 @@ body.jspsych-display-element {
   width: 100%;
   margin: 0; }
   body.jspsych-display-element .color-box {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh; }
     body.jspsych-display-element .color-box#grey {
@@ -16,5 +19,24 @@ body.jspsych-display-element {
       background: #0040ff; }
     body.jspsych-display-element .color-box#hot-magenta {
       background: #ff00c0; }
+  body.jspsych-display-element .visual-feedback {
+    position: absolute;
+    right: 100px;
+    z-index: 2;
+    display: none;
+    width: 80px;
+    height: 80px;
+    box-sizing: border-box;
+    font-size: 2em;
+    text-align: center;
+    padding-top: 25px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3); }
+    body.jspsych-display-element .visual-feedback#up {
+      top: 150px; }
+    body.jspsych-display-element .visual-feedback#down {
+      top: 300px; }
+    body.jspsych-display-element .visual-feedback.visible {
+      display: block; }
 
 /*# sourceMappingURL=style.css.map */

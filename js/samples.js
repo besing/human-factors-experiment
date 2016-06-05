@@ -14,12 +14,12 @@ var playSinoid = function (freq, duration) { // (Hz, sec)
 
 
 var colorsHtml = [
-  '<div class="color-box" id="grey">grey</div>', // TODO : delete description before test
-  '<div class="color-box" id="white">white</div>',
-  '<div class="color-box" id="amber">amber</div>',
-  '<div class="color-box" id="malachite">malachite</div>',
-  '<div class="color-box" id="navy-blue">navy-blue</div>',
-  '<div class="color-box" id="hot-magenta">hot-magenta</div>'
+  '<div class="color-box" id="grey"></div>',
+  '<div class="color-box" id="white"></div>',
+  '<div class="color-box" id="amber"></div>',
+  '<div class="color-box" id="malachite"></div>',
+  '<div class="color-box" id="navy-blue"></div>',
+  '<div class="color-box" id="hot-magenta"></div>'
 ];
 
 

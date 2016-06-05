@@ -1,7 +1,6 @@
 $(document).ready(function () { // braucht keypress.js anscheinend
 
-
-// Count Keypresses via keypress.js
+  // Count Keypresses via keypress.js
   var listener = new window.keypress.Listener();
 
   var countTotalUp = [];
@@ -10,10 +9,9 @@ $(document).ready(function () { // braucht keypress.js anscheinend
   var countKeyPress = function (keyString) {
     listener.counting_combo(keyString, function () {
 
-      if (keyString === 'up') { // TODO
+      if (keyString == 'up') { // TODO
         countTotalUp.push(keyString);
-      }
-      else if (keyString === 'down') {
+      } else if (keyString === 'down') {
         countTotalDown.push(keyString);
       }
 
@@ -25,6 +23,32 @@ $(document).ready(function () { // braucht keypress.js anscheinend
 
   countKeyPress('up');
   countKeyPress('down');
+
+
+  // show Visual Feedback +1/-1 (for a moment only)
+  var visualFeedbackListener = new window.keypress.Listener();
+
+  visualFeedbackListener.register_many([
+    {
+      'keys': 'up',
+      'on_keydown': function () {
+        $('.visual-feedback#up').addClass('visible');
+      },
+      'on_keyup': function() {
+        $('.visual-feedback#up').removeClass('visible');
+      }
+    },
+    {
+      'keys': 'down',
+      'on_keydown': function () {
+        $('.visual-feedback#down').addClass('visible');
+      },
+      'on_keyup': function() {
+        $('.visual-feedback#down').removeClass('visible');
+      }
+    }
+  ]);
+
 
 
   var soundsDuration = 1; // TODO : pass sound sample duration (in s) here
@@ -112,18 +136,19 @@ $(document).ready(function () { // braucht keypress.js anscheinend
 
 
   var allSoundsAndColors = soundsAndColors.concat(noSoundsAndColors); // connect the two arrays
-  console.log('allSoundsAndColors: ', allSoundsAndColors);
+  // console.log('allSoundsAndColors: ', allSoundsAndColors);
 
 
   var allSoundsAndColorsShuffled = jsPsych.randomization.shuffle(allSoundsAndColors); // final trials array
-  console.log('Shuffled combinations: ', allSoundsAndColorsShuffled);
+  // console.log('Shuffled combinations: ', allSoundsAndColorsShuffled);
 
 
   var timeline = [];
 
   var combinedStimuli = {
     type: 'single-stim',
-    timing_response: 1500,
+    // timing_response: 1500,
+    timing_response: -1, // TODO
     response_ends_trial: false,
     is_html: true,
     timeline: allSoundsAndColorsShuffled
@@ -147,7 +172,7 @@ $(document).ready(function () { // braucht keypress.js anscheinend
 
     on_finish: function () {
       jsPsych.data.displayData('json');
-      jsPsych.data.localSave('experiment_results.csv', 'csv');
+      // jsPsych.data.localSave('experiment_results.csv', 'csv');
     }
   });
 

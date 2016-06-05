@@ -13,6 +13,9 @@ body {
     margin: 0;
 
     .color-box {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100vw;
       height: 100vh;
 
@@ -38,6 +41,33 @@ body {
 
       &#hot-magenta {
         background: $hot-magenta;
+      }
+    }
+
+    .visual-feedback {
+      position: absolute;
+      right: 100px;
+      z-index: 2;
+      display: none;
+      width: 80px;
+      height: 80px;
+      box-sizing: border-box;
+      font-size: 2em;
+      text-align: center;
+      padding-top: 25px;
+      border-radius: 50%;
+      background: rgba(#fff,0.3);
+
+      &#up {
+        top: 150px;
+      }
+
+      &#down {
+        top: 300px;
+      }
+
+      &.visible {
+        display: block;
       }
     }
   }
