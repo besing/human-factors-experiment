@@ -232,10 +232,18 @@ $(document).ready(function () { // braucht keypress.js anscheinend
   };
 
 
+  var finalScreen = {
+    type: 'text',
+    text: '<p>Der Test ist zu Ende.</p><p>Vielen Dank f&uuml;r deine Teilnahme!</p><p>Um den Test zu schlie&szlig;en, dr&uuml;cke jetzt bitte "Enter".</p>',
+    cont_key: [13]
+  };
+
+
   timeline.push(inputSex);
   timeline.push(inputAge);
   timeline.push(startScreen);
   timeline.push(colorsSoundStimuli);
+  timeline.push(finalScreen);
 
 
   jsPsych.init({
