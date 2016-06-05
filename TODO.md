@@ -1,8 +1,7 @@
 ## TODO
 
 
-
-[] Set values for Frequencies, duration
+[] Datenoutput evtl. optimierung
 
 ---
 
@@ -12,3 +11,4 @@
 [√] Fullscreen
 [√] Visual Feedback on Keypress
 [√] Requets Data in the beginning: sex / age (+ start button/key)
+[√] Set values for Frequencies, duration

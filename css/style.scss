@@ -1,14 +1,15 @@
 $grey: #c0c0c0;
-$white: #fff;
-
+$deep-sky-blue: #00c0ff;
 $amber: #ffc000;
 $malachite: #00ff40;
-
 $navy-blue: #0040ff;
 $hot-magenta: #ff00c0;
 
 body {
   &.jspsych-display-element {
+    background: #000;
+    color: #fff;
+
     .color-box {
       position: absolute;
       top: 0;
@@ -20,8 +21,8 @@ body {
         background: $grey;
       }
 
-      &#white {
-        background: $white;
+      &#deep-sky-blue {
+        background: $deep-sky-blue;
       }
 
       &#amber {
@@ -46,6 +47,7 @@ body {
       right: 100px;
       z-index: 2;
       display: none;
+      color: #000;
       width: 80px;
       height: 80px;
       box-sizing: border-box;

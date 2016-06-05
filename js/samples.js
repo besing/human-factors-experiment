@@ -15,7 +15,7 @@ var playSinoid = function (freq, duration) { // (Hz, sec)
 
 var colorsHtml = [
   '<div class="color-box" id="grey"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
-  '<div class="color-box" id="white"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
+  '<div class="color-box" id="deep-sky-blue"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
   '<div class="color-box" id="amber"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
   '<div class="color-box" id="malachite"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
   '<div class="color-box" id="navy-blue"><div class="visual-feedback" id="up">+ 1</div><div class="visual-feedback" id="down">- 1</div></div>',
@@ -25,8 +25,9 @@ var colorsHtml = [
 
 var sinoids = [ // don't reorder!
   0, // function gets called in experiment-timeline, only passing frequency arguments here
-  150, // TODO: edit frequencies
-  200
+  130, // TODO: edit frequencies
+  207,
+  277
 ];
 
 var noSounds = [];
@@ -43,10 +44,10 @@ var sounds = [];
 sounds.push(
   sinoids[1],
   sinoids[1],
-  sinoids[1],
   sinoids[2],
   sinoids[2],
-  sinoids[2]
+  sinoids[3],
+  sinoids[3]
 );
 
 
