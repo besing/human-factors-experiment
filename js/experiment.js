@@ -216,7 +216,7 @@ $(document).ready(function () { // braucht keypress.js anscheinend
 
   var startScreen = {
     type: 'instructions',
-    pages: ['<p>Das Experiment kann beginnen. Wenn Sie soweit sind, dr&uuml;cken Sie auf der Tastatur "Y".</p><p>Das Experiment geht sofort danach los.</p>'],
+    pages: ['<p>Willkommen!</p><p>Wir danken Ihnen, dass Sie an unserem Test teilnehmen. Der Test dauert insgesamt 3 - 5 Minuten und wird mit Hilfe eines Computerbildschirmes und der Tastatur durchgef&uuml;hrt.</p><p>Auf dem Bildschirm werden Sie verschiedene Farben sehen und verschiedene Kl&auml;nge h&ouml;ren. Seien sie nicht irritiert, falls Sie zu einigen Bildern keine Kl&auml;nge h&ouml;ren: manche Farben werden ohne Sound gezeigt.</p><p>Wir bitten Sie, sich w&auml;hrend des ganzen Testablaufs auf den Bildschirm zu konzentrieren und ihre Finger auf den Pfeiltasten zu halten.</p><p><strong><u>Was m&uuml;ssen Sie tun? Einfach die Pfeiltasten bet&auml;tigen, wenn Sie sich danach f&uuml;hlen:</u></strong></p><p><strong><u>Falls Sie das Gef&uuml;hl haben, dass eine Farbe oder Kombination von Farbe und Klang Sie aufmuntert und/oder genussvoll ist, dr&uuml;cken Sie bitte auf "Nach oben".</u></strong></strong></p><p><strong><u>Falls Sie sich w&auml;hrend des Tests nicht aufgemuntert f&uuml;hlen, wenn eine Farbe oder ein Klang nicht genussvoll ist, dr&uuml;cken Sie bitte auf "Nach unten".</u></strong></p><p>Jedes Mal, wenn Sie einen Knopf dr&uuml;cken, wird in Echtzeit ein Signal gespeichert. Als Best&auml;tigung dessen sehen Sie auf dem Bildschirm die Zeichen "+1" oder "-1".</p><p>Viel Spa&szlig;!</p><p>Das Experiment kann beginnen. Wenn Sie soweit sind, dr&uuml;cken Sie auf der Tastatur " Y ".</p><p>Das Experiment geht dann direkt los.</p>'],
     key_forward: 'y'
   };
 
